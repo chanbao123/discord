@@ -21,26 +21,6 @@ function App() {
     localStorage.setItem("id", id);
     console.log(reponse.data);
   };
-  useEffect(() => {
-    if (id_user !== null) {
-      try {
-        const getData = async () => {
-          const data = await axios.get(
-            `http://144.126.145.81:8888/api/datauser/${id_user}`
-          );
-          setUser(data.data);
-          localStorage.removeItem("id");
-          localStorage.removeItem("user");
-          localStorage.setItem("discordauth", data.data.access_token);
-          setLogin(true);
-          console.log(data.data);
-        };
-        getData();
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  }, [id_user]);
 
   useEffect(() => {
     if (discordauth !== null) {
