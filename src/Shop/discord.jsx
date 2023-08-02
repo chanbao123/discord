@@ -49,7 +49,6 @@ function Discord() {
           </div>
         </div>
       </div>
-      <h1>4</h1>
     </div>
   );
 }
