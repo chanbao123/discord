@@ -1,7 +1,10 @@
-import React from 'react';
+import { useParams } from "react-router-dom";
 
 function Guild() {
-	return <div>Guild</div>;
+  let { id } = useParams();
+  //   const [guild, setGuild] = useState();
+  console.log(id);
+  return <div>{id}</div>;
 }
 
 export default Guild;

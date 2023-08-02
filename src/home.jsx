@@ -1,6 +1,42 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+function Home() {
+  const navigate = useNavigate();
+  const [user, setUser] = useState();
 
-function Home({ userdata }) {
+  // Check IF User has already logged in identified
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    if (id !== null) {
+      const getdata = async (id) => {
+        try {
+          const { data, status } = await axios.get(
+            `http://144.126.145.81:8888/api/datauser/${id}`
+          );
+          if (status === 200) {
+            localStorage.setItem("id", data.access_token);
+            setUser(data);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      getdata(id);
+    }
+  }, []);
+
+  // Check user isLogin
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const id = localStorage.getItem("id");
+      if (id === null) {
+        return navigate("/");
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [navigate]);
+
   return (
     <div>
       <div className="flex  pt-6 w-100%">
@@ -40,142 +76,34 @@ function Home({ userdata }) {
               <button></button>
             </div>
             <div>
-              <p>{userdata.user.global_name}</p>
+              <p>{user?.user && user?.user.global_name}</p>
             </div>
           </div>
         </div>
       </div>
       <div className="justify-center items-center grid grid-cols-5 gap-5 ">
-        {userdata.guilds.map((v) => {
-          return (
-            <div
-              className="flex flex-col border border-indigo-600 rounded-md bg-slate-600 p-8 justify-center items-center"
-              key={v.id}
-            >
-              <div>
-                <img
-                  src={`https://cdn.discordapp.com/icons/${v.id}/${v.icon}.png`}
-                  alt={`${v.icon}`}
-                />
+        {user?.guilds.length > 0 &&
+          user?.guilds.map((v) => {
+            return (
+              <div
+                className="flex flex-col border border-indigo-600 rounded-md bg-slate-600 p-8 justify-center items-center cursor-pointer"
+                key={v.id}
+                onClick={() => navigate(`/dashboard/${v.id}`)}
+              >
+                <div>
+                  <img
+                    src={`https://cdn.discordapp.com/icons/${v.id}/${v.icon}.png`}
+                    alt={`${v.icon}`}
+                  />
+                </div>
+                <div>
+                  <a href="">
+                    <p>{v.name}</p>
+                  </a>
+                </div>
               </div>
-              <div>
-                <a href="">
-                  <p>{v.name}</p>
-                </a>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="justify-center items-center flex w-full h-96 gap-20 ">
-        <div className="flex w-250 h-400 flex-col border border-indigo-600 rounded-md bg-slate-600 px-8">
-          <div>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <a href="">
-              <p>AAA</p>
-            </a>
-            <a href="">
-              <p>2000$</p>
-            </a>
-          </div>
-          <div className="gap-5 flex">
-            <div>
-              <button>BUY</button>
-            </div>
-            <div>
-              <button>ADD</button>
-            </div>
-          </div>
-        </div>
-        <div className="flex w-250 h-400 flex-col border border-indigo-600 rounded-md bg-slate-600 px-8">
-          <div>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <a href="">
-              <p>AAA</p>
-            </a>
-            <a href="">
-              <p>2000$</p>
-            </a>
-          </div>
-          <div className="gap-5 flex">
-            <div>
-              <button>BUY</button>
-            </div>
-            <div>
-              <button>ADD</button>
-            </div>
-          </div>
-        </div>
-        <div className="flex w-250 h-400 flex-col border border-indigo-600 rounded-md bg-slate-600 px-8">
-          <div>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <a href="">
-              <p>AAA</p>
-            </a>
-            <a href="">
-              <p>2000$</p>
-            </a>
-          </div>
-          <div className="gap-5 flex">
-            <div>
-              <button>BUY</button>
-            </div>
-            <div>
-              <button>ADD</button>
-            </div>
-          </div>
-        </div>
-        <div className="flex w-250 h-400 flex-col border border-indigo-600 rounded-md bg-slate-600 px-8">
-          <div>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <a href="">
-              <p>AAA</p>
-            </a>
-            <a href="">
-              <p>2000$</p>
-            </a>
-          </div>
-          <div className="gap-5 flex">
-            <div>
-              <button>BUY</button>
-            </div>
-            <div>
-              <button>ADD</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-row pt-6 w-100% h-auto gap-16">
-        <div className=" w-50% h-40 float-left block ml-4">
-          <h3 className="font-semibold text-2xl">TECHNOLOGY PRO 16</h3>
-          <p className="block">
-            Data transmission has three aspects: transmission, propagation,
-            <br />
-            and reception.It can be broadly categorized as broadcasting,
-            <br /> in which information is transmitted unidirectionally
-            downstream,
-            <br /> or telecommunications, with bidirectional upstream and
-            downstream channels. <br />
-            XML has been increasingly employed as a means of data interchange
-            since the early 2000s,
-            <br />
-            particularly for machine-oriented interactions such as those
-            involved in web-oriented protocols such as SOAP,
-            <br />
-            describing "data-in-transit rather than... data-at-rest".
-          </p>
-        </div>
-        <div className=" w-50% float-right ml-4 justify-center items-center h-40 pl-40">
-          <h3>dsfsdf</h3>
-        </div>
+            );
+          })}
       </div>
     </div>
   );
