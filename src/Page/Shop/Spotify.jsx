@@ -14,7 +14,7 @@ function Spotify() {
 							/>
 						</div>
 					</div>
-					<div clas>
+					<div className="">
 						<div className=" text-black m-3">
 							<p className="">Package subscription month</p>
 							<p>Free</p>
