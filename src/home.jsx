@@ -5,7 +5,7 @@ function Home({ userdata }) {
     <div>
       <div className="flex  pt-6 w-100%">
         <div className="bg-blue-700 w-64 h-80 text-gray-300 flex-col border-1 rounded-lg">
-          <h3 className="px-20 pt-6">MENU</h3>
+          <h3 className="px-20 pt-6">HOME</h3>
           <div>
             <ul className="pl-5 pt-6 space-y-4">
               <li>
