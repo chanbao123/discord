@@ -61,7 +61,7 @@ function Discord() {
 					</div>
 				</div>
 			</div>
-			<h1>Something</h1>
+			<h1>2</h1>
 		</div>
 	);
 }
