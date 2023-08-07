@@ -1,6 +1,6 @@
 import React from "react";
 
-function mee6ai() {
+function Mee6ai() {
   return (
     <div>
       <div className="m-4 grid-cols-4 grid gap-6">
@@ -13,7 +13,7 @@ function mee6ai() {
               <p> </p>
             </div>
             <div className="font-bold">
-              <p>Server Discovery</p>
+              <p>Server Discovery Mee</p>
             </div>
             <div>
               <p>Grow your community for free</p>
@@ -28,4 +28,4 @@ function mee6ai() {
   );
 }
 
-export default mee6ai;
+export default Mee6ai;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function web3() {
+function Gameandfun() {
   return (
     <div>
       <div className="m-4 grid-cols-4 grid gap-6">
@@ -51,7 +51,7 @@ function web3() {
               <p> </p>
             </div>
             <div className="font-bold">
-              <p>Server Discovery</p>
+              <p>Server Discovery Game</p>
             </div>
             <div>
               <p>Grow your community for free</p>
@@ -122,4 +122,4 @@ function web3() {
     </div>
   );
 }
-export default web3;
+export default Gameandfun;

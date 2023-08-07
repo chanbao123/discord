@@ -1,6 +1,6 @@
 import React from "react";
 
-function monetization() {
+function Monetization() {
   return (
     <div>
       <div className="m-4 grid-cols-4 grid gap-6">
@@ -13,7 +13,7 @@ function monetization() {
               <p> </p>
             </div>
             <div className="font-bold">
-              <p>Server Discovery</p>
+              <p>Server Discovery moin</p>
             </div>
             <div>
               <p>Grow your community for free</p>
@@ -28,4 +28,4 @@ function monetization() {
   );
 }
 
-export default monetization;
+export default Monetization;
