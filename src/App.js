@@ -8,19 +8,17 @@ import Servermanagement from "./plugin/Servermanagement";
 import Socialalerts from "./plugin/Socialalerts";
 import Utilities from "./plugin/Utilities";
 import Compoment from "./Composment/Compoment";
+import Tool from "./Composment/tool";
 
 function App() {
   const [action, setaction] = useState("allplugins");
   return (
     <div className="flex flex-row h-screen w-full  text-white">
-      <div className="basis-1/6 bg-[#1c1c1c] border-r">
-        <div>Left Part</div>
-      </div>
+      <Tool />
 
       <div className="overflow-hidden flex flex-col bg-[#1c1c1c] w-full">
         <div className="sticky h-[30px] z-30 t-0 r-0 flex flex-row gap-4 w-full justify-end p-10">
           <p>Settings</p>
-          <p>Notification</p>
           <Compoment />
           <p>User_Name</p>
         </div>
@@ -132,7 +130,7 @@ function App() {
             <Monetization />
           ) : action === "web3" ? (
             <Web3 />
-          ) : action === "popularplugins" ? (
+          ) : action === "popularPlugins" ? (
             <Popularplugins />
           ) : action === "Socialalerts" ? (
             <Socialalerts />
@@ -144,7 +142,7 @@ function App() {
             <div className="m-4 grid-cols-4 grid gap-6">
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -156,16 +154,25 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
-                  <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -177,16 +184,25 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
-                  <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -198,16 +214,25 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
-                  <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -219,16 +244,25 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
-                  <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -240,16 +274,25 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
-                  <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -261,16 +304,25 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
-                  <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -282,16 +334,25 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
-                  <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
               <div
                 id="card"
-                className="bg-[#131417] hover:opacity-[1] opacity-[.8] duration-300 w-64 h-52 rounded-md "
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
               >
                 <div className="m-2 flex flex-col gap-4">
                   <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
@@ -303,9 +364,78 @@ function App() {
                   <div>
                     <p>Grow your community for free</p>
                   </div>
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="card"
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
+              >
+                <div className="m-2 flex flex-col gap-4">
+                  <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
+                    <p> </p>
+                  </div>
+                  <div className="font-bold">
+                    <p>Server Discovery</p>
+                  </div>
                   <div>
-                    <button className="rounded-sm bg-[#a7adba] w-20">
-                      Enable
+                    <p>Grow your community for free</p>
+                  </div>
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="card"
+                className="group cursor-pointer p-6 rounded-lg bg-[#131417] hover:opacity-[1] opacity-[.8] grid grid-cols-1 gap-3 transition-all duration-200 hover:shadow-lg"
+              >
+                <div className="m-2 flex flex-col gap-4">
+                  <div className="bg-[#011f4b] w-10 h-10 m-4 rounded-md">
+                    <p> </p>
+                  </div>
+                  <div className="font-bold">
+                    <p>Server Discovery</p>
+                  </div>
+                  <div>
+                    <p>Grow your community for free</p>
+                  </div>
+                  <div className="pointer-events-none">
+                    <button className="flex shrink-0 rounded-lg transition-all duration-200 items-center  gap-1.5 bg-white bg-opacity-10 text-white hover:bg-opacity-20 active:bg-opacity-5 active:text-opacity-60 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-opacity-10 overflow-hidden relative text-base px-4 py-2">
+                      <div className="flex flex-grow justify-center max-w-full">
+                        <span className="transition-all duration-200 whitespace-nowrap text-ellipsis overflow-hidden block w-full shrink-0 text-center">
+                          <div className="flex items-center justify-center gap-2 transform translate-all duration-200 group-hover:-translate-y-full">
+                            Enable +
+                          </div>
+                          <div className="absolute bg-sky-500 top-0 left-0 w-full h-full flex items-center justify-center gap-2 transform translate-all duration-200 translate-y-full group-hover:translate-y-0">
+                            Enable -
+                          </div>
+                        </span>
+                      </div>
                     </button>
                   </div>
                 </div>
