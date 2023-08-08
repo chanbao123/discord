@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Discord from "./Page/Shop/discord";
 import Spotify from "./Page/Shop/Spotify";
 import Exitlag from "./Page/Shop/exitlag";
 import Discordbot from "./Page/Shop/discordbot";
 
-function pageshop() {
+function Pageshop() {
   const [action, setAction] = useState();
   return (
     <div>
@@ -145,4 +145,4 @@ function pageshop() {
   );
 }
 
-export default pageshop;
+export default Pageshop;

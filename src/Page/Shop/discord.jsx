@@ -1,4 +1,3 @@
-import React from "react";
 function Discord() {
   return (
     <div className="flex flex-cols gap-10 justify-center w-full p-4">
@@ -11,7 +10,7 @@ function Discord() {
               </div>
             </div>
           </div>
-          <div clas>
+          <div>
             <div className=" text-black m-3">
               <p className="">Nitro link Gift</p>
               <p>Free</p>
@@ -26,7 +25,7 @@ function Discord() {
               <img src="./src/OIP.jpg" alt="" className="rounded-t-2xl" />
             </div>
           </div>
-          <div clas>
+          <div>
             <div className=" text-black m-3">
               <p className="">Nitro login</p>
               <p>Free</p>
@@ -41,7 +40,7 @@ function Discord() {
               <img src="./src/OIP.jpg" alt="" className="rounded-t-2xl" />
             </div>
           </div>
-          <div clas>
+          <div>
             <div className=" text-black m-3">
               <p className="">BoostServer</p>
               <p>Free</p>
