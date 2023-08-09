@@ -2,7 +2,7 @@ import { CheckIcon, MegaphoneIcon } from '@heroicons/react/24/outline';
 
 function Discord() {
 	return (
-		<div className="flex flex-row gap-6">
+		<div className="flex flex-row gap-6 ">
 			<div className="m-10 w-60 h-auto flex flex-col place-items-center relative text-black">
 				<div className="bg-[#1B4D3E] w-60 h-32 rounded-md text-white ">
 					<div className="flex flex-col gap-2 m-3">
