@@ -1,0 +1,4 @@
+.discord-video {
+	background-image: url('./image/discord.mp4');
+	object-fit: cover;
+}
